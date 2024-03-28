@@ -3,6 +3,6 @@ pkg install root-repo
 pkg install x11-repo
 termux-setup-storage
 
-cd ..
+cd ~/
 
 rm -r temp
