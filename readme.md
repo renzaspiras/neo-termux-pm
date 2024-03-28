@@ -1,10 +1,9 @@
 # Package Manager for Craft Matrix Based
 
 ```
-pkg upgrade
-pkg install root-repo
-pkg install x11-repo
+yes | pkg upgrade
+yes | pkg install git
 git clone https://github.com/renzaspiras/termux-cm-manager.git temp
 cd temp
-bash setup.sh
+yes | bash setup.sh
 ```
