@@ -1,5 +1,5 @@
 # Package Manager for Craft Matrix Based
 
 ```
-curl -fsSL https://github.com/renzaspiras/termux-cm-manager/blob/main/setup.sh | sh
+curl -fsSL https://raw.githubusercontent.com/renzaspiras/termux-cm-manager/main/setup.sh| sh
 ```
