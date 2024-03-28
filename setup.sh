@@ -15,5 +15,5 @@ termux-setup-storage
 pkg install proot-distro
 
 proot-distro install archlinux
-
-proot-distro login archlinux
+clear
+proot-distro login archlinux #-- any bash commands
