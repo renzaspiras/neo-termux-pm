@@ -4,7 +4,7 @@
 ## How to Install?
 ### First You need to update the Termux and install git
 ```
-pkg upgrade && pkg install git
+yes | pkg upgrade && yes | pkg install git
 ```
 
 ### Second, you have to git clone this repository,
@@ -22,5 +22,5 @@ cd temp && bash setup.sh
 # Too lazy step by step???
 Take the risk to run it all at once command.
 ```
-pkg upgrade && pkg install git && git clone https://github.com/renzaspiras/arch-termux.git temp && cd temp && bash setup.sh
+yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git temp && cd temp && yes | bash setup.sh
 ```
