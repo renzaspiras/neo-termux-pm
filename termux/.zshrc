@@ -6,19 +6,6 @@ export EDITOR=nvim`
 alias visudo='sudo EDITOR=nvim visudo'
 alias update='bash .box.sh'
 
-alias add='git_clone_hello'
-git_clone_hello() {
-    git clone "$1" hello && cd hello && \
-    if [ -f cm.sh ]; then
-        bash cm.sh
-    else
-        echo "It is not compatible with CM Console..."
-        cd ..
-        rm -rf hello
-    fi
-}
-
-
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
