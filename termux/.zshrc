@@ -2,6 +2,8 @@
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
 neofetch
+export EDITOR=nvim
+alias visudo='sudo EDITOR=nvim visudo'
 
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
