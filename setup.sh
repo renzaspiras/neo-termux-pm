@@ -1,5 +1,5 @@
-yes | bash package.sh
+yes | bash ./termux/package.sh
 
-bash archlinux.sh
+bash ./termux/archlinux.sh
 
-bash config.sh
+bash ./termux/config.sh
