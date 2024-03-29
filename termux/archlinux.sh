@@ -12,7 +12,6 @@ proot-distro login archlinux -- pacman -S wget --noconfirm
 # Applying .zshrc themes --> it is based on the default zsh on kali linux, with slight modification of mine...
 proot-distro login archlinux -- wget https://raw.githubusercontent.com/renzaspiras/arch-termux/main/termux/.zshrc ~/.zshrc
 
-proot-distro login archlinux -- mkdir ~/apps
-proot-distro login archlinux -- wget https://raw.githubusercontent.com/renzaspiras/arch-termux/main/lang/box.sh ~/apps/.box.sh
+proot-distro login archlinux -- wget https://raw.githubusercontent.com/renzaspiras/arch-termux/main/lang/.box.sh
 
 proot-distro login archlinux -- chsh -s /bin/zsh

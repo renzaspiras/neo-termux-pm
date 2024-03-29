@@ -4,7 +4,7 @@
 neofetch
 export EDITOR=nvim
 alias visudo='sudo EDITOR=nvim visudo'
-alias update=''
+alias update='bash .box.sh'
 
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
