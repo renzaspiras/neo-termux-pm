@@ -4,6 +4,7 @@
 neofetch
 export EDITOR=nvim
 alias visudo='sudo EDITOR=nvim visudo'
+alias update=''
 
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
