@@ -1,21 +1,21 @@
 # Craft Matrix
 
-yes | pkg upgrade
+pkg upgrade;
 
-yes | pkg install git
-yes | pkg install root-repo
-yes | pkg install x11-repo
-yes | pkg install neofetch
-yes | pkg install proot-distro
-yes | pkg install tmux
+pkg install git;
+pkg install root-repo;
+pkg install x11-repo;
+pkg install neofetch;
+pkg install proot-distro;
+pkg install tmux;
 
 # installs programming languages
-pkg install python
-pkg install clang
-mkdir ~/apps
+pkg install python;
+pkg install clang;
+mkdir ~/apps;
 
-termux-setup-storage
+termux-setup-storage;
 
-proot-distro install archlinux
+proot-distro install archlinux;
 
-proot-distro login archlinux #-- any bash commands
+proot-distro login archlinux; #-- any bash commands;
