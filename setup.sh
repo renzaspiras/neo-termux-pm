@@ -1,13 +1,13 @@
 # Craft Matrix
 
-pkg upgrade
+yes | pkg upgrade
 
-pkg install git
-pkg install root-repo
-pkg install x11-repo
-pkg install neofetch
-pkg install proot-distro
-pkg install tmux
+yes | pkg install git
+yes | pkg install root-repo
+yes | pkg install x11-repo
+yes | pkg install neofetch
+yes | pkg install proot-distro
+yes | pkg install tmux
 
 # installs programming languages
 pkg install python
