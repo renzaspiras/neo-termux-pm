@@ -1,1 +1,1 @@
-echo "hello"
+bash package.sh
