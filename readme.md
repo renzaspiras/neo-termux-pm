@@ -1,5 +1,6 @@
 # Package Manager for Craft Matrix Based
 ***
+Archlinux in yout pocket
 
 ## How to Install?
 ### First You need to update the Termux and install git
