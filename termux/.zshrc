@@ -22,13 +22,14 @@ git_clone_hello() {
     git clone "$1" hello && cd hello && \
     if [ -f cm.sh ]; then
         bash cm.sh
+        cd ..
+        rm -rf hello
     else
         echo "It is not compatible with CM Console..."
         cd ..
         rm -rf hello
     fi
 }
-
 alias list='ls ~/apps'
 
 # Reference from:
