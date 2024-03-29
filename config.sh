@@ -1,3 +1,3 @@
 cp .bashrc ~/.bashrc
-yes | rm -r ./temp
+yes | rm -r ~/temp
 exit
