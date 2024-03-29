@@ -3,7 +3,6 @@
 
 neofetch
 
-
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
