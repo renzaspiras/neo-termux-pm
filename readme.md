@@ -9,6 +9,18 @@ pkg upgrade && pkg install git
 
 ### Second, you have to git clone this repository,
 ```
-git clone https://github.com/renzaspiras/arch-termux.git
+git clone https://github.com/renzaspiras/arch-termux.git temp
 ```
 
+### Thirdly, change directory to temp
+```
+cd temp && bash setup.sh
+```
+
+
+***
+# Too lazy step by step???
+Take the risk to run it all at once command.
+```
+pkg upgrade && pkg install git && git clone https://github.com/renzaspiras/arch-termux.git temp && cd temp && bash setup.sh
+```
