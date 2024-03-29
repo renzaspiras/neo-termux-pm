@@ -3,5 +3,5 @@
 
 ## How to Install?
 ```
-curl -fsSL https://raw.githubusercontent.com/renzaspiras/termux-cm-manager/main/setup.sh | sh
+curl -fsSL https://raw.githubusercontent.com/renzaspiras/arch-termux/main/setup.sh | sh
 ```
