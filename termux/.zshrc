@@ -1,9 +1,20 @@
-# ~/.zshrc file for zsh interactive shells.
-# see /usr/share/doc/zsh/examples/zshrc for examples
+
 
 neofetch
 export EDITOR=nvim
 alias visudo='sudo EDITOR=nvim visudo'
+
+# Package Directory
+if [ ! -d "apps" ]; then
+    # If not, create it
+    mkdir apps
+    # echo "Directory 'apps' created."
+else
+    # echo "Directory 'apps' already exists."
+fi
+
+
+# Package Manager
 alias update='bash .box.sh'
 
 alias add='git_clone_hello'
@@ -17,6 +28,11 @@ git_clone_hello() {
         rm -rf hello
     fi
 }
+
+alias list='ls ~/apps'
+
+# Reference from:
+#   https://gist.github.com/noahbliss/4fec4f5fa2d2a2bc857cccc5d00b19b6
 
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
