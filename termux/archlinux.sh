@@ -7,4 +7,5 @@ proot-distro login archlinux -- pacman -S neovim --noconfirm
 proot-distro login archlinux -- chsh -s /bin/zsh
 
 meow=$(cat /termux/.zshrc)
-proot-distro login archlinux -- echo "$meow" > ~/.zshrc
+proot-distro login archlinux -- touch .zshrc
+# proot-distro login archlinux -- echo "$meow" > ~/.zshrc
