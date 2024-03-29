@@ -1,4 +1,4 @@
 cp .bashrc ~/.bashrc
-yes | rm -r ~/temp
+yes | rm -r ~/->
 cd ~/
-clear
+echo "Done Installing. You May Now Type [Exit] and [Enter]"
