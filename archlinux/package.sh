@@ -1,1 +1,2 @@
-pacman -S neovim
+echo "testing"
+pacman -S neovim --noconfirm
