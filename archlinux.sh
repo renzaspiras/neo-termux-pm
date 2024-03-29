@@ -1,2 +1,3 @@
 proot-distro install archlinux
-proot-distro login archlinux
+
+proot-distro login archlinux -- echo "hello world"
