@@ -1,1 +1,3 @@
-pkg upgrade
+echo "update"
+
+# pkg upgrade
