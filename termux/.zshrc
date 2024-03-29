@@ -6,6 +6,14 @@ export EDITOR=nvim
 alias visudo='sudo EDITOR=nvim visudo'
 alias update='bash .box.sh'
 
+alias add='run_script'
+run_script() {
+    bash run.sh "$@"
+}
+
+# ~/.zshrc file for zsh interactive shells.
+# see /usr/share/doc/zsh/examples/zshrc for examples
+
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
@@ -197,7 +205,7 @@ bindkey ^P toggle_oneline_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
-    TERM_TITLE=$"\e]0;${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%n@%m: %~\a"
+    TERM_TITLE=$'\e]0;${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%n@%m: %~\a'
     ;;
 *)
     ;;
