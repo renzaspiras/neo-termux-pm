@@ -1,1 +1,1 @@
-bash package.sh
+yes | bash package.sh
