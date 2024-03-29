@@ -9,7 +9,7 @@ yes | pkg upgrade && yes | pkg install git
 
 ### Second, you have to git clone this repository,
 ```
-git clone https://github.com/renzaspiras/arch-termux.git temp
+git clone https://github.com/renzaspiras/arch-termux.git ->
 ```
 
 ### Thirdly, change directory to temp
