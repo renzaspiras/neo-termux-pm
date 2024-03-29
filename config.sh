@@ -1,1 +1,3 @@
-echo "this is config"
+cp .bashrc ~/.bashrc
+cd ..
+yes | rm -r temp
