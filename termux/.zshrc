@@ -13,6 +13,8 @@ else
     # echo "Directory 'apps' already exists."
 fi
 
+# Anti Bloat
+[ -d "hello" ] && rm -r "hello"
 
 # Package Manager
 alias update='bash .box.sh'
