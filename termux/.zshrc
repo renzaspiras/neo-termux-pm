@@ -1,5 +1,3 @@
-
-
 neofetch
 export EDITOR=nvim
 alias visudo='sudo EDITOR=nvim visudo'
