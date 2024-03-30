@@ -7,7 +7,7 @@ wget https://raw.githubusercontent.com/renzaspiras/arch-termux/main/termux/.zshr
 
 
 # Define the directory containing all the directories to search
-APPS_DIR="~/apps"
+APPS_DIR="$HOME/apps"
 
 # Check if APPS_DIR exists
 if [ ! -d "$APPS_DIR" ]; then
