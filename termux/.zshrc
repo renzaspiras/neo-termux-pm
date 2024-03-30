@@ -32,7 +32,17 @@ git_clone_hello() {
 }
 alias list='ls ~/apps'
 
-alias remove='function _remove() { if [ -d ~/apps/args ]; then bash ~/apps/args/cmrm.sh "$@"; else echo "Package does not exist"; fi; }; _remove'
+alias remove='remove_package'
+remove_package() {
+    package="$1"
+    if [ -d ~/apps/$package ]; then
+        bash ~/apps/$package/cmrm.sh
+        rm -rf ~/apps/$package
+    else
+        echo "Package does not exist"
+    fi
+}
+
 
 # Reference from:
 #   https://gist.github.com/noahbliss/4fec4f5fa2d2a2bc857cccc5d00b19b6
