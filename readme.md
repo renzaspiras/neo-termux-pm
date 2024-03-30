@@ -1,30 +1,45 @@
-# Donut C
+# Arch-Termux
 
-This project introduces a C implementation of the iconic "donut" algorithm, showcasing a 3D donut shape using ASCII characters within the console. Drawing inspiration from optimization techniques outlined by Andy Sloane in his blog post ["A journey to the center of the donut"](https://www.a1k0n.net/2021/01/13/optimizing-donut.html), it seamlessly integrates with cm-console, delivering a captivating experience in various environments, including Arch and Termux.
+Welcome to Arch-Termux, where you can bring the power of Archlinux into your pocket! This repository provides a convenient way to install Archlinux on your Termux environment.
 
-## Overview
+## Why Archlinux?
 
-The donut algorithm stands as a mesmerizing display of code, generating a spinning donut shape using ASCII characters, illustrating the profound synergy of mathematics and programming. This project endeavors to replicate this marvel in C while integrating optimizations presented by Andy Sloane.
+Archlinux is renowned for its simplicity, flexibility, and cutting-edge technology. It offers a lightweight and minimalist base system, allowing users to customize their environment according to their needs. With Archlinux, you have complete control over your system, enabling you to tailor it to your preferences.
 
-## Compatibility
+## How to Install?
 
-Crafted to excel within console environments, this implementation harmonizes effortlessly with cm-console, a versatile console graphics library. Its compatibility extends across various environments, including Arch and Termux, allowing enthusiasts to delve into the captivating world of donut rendering seamlessly.
+### Step 1: Update and Install Dependencies
 
-## Compilation and Execution
-
-To compile the project, execute the following command:
+Ensure that your Termux environment is up to date and has Git installed. You can do this by running the following command:
 
 ```bash
-gcc donut.c -o donut -lm
+yes | pkg upgrade && yes | pkg install git
 ```
 
-To run the compiled executable, use:
+### Step 2: Clone the Repository
+
+Next, clone the Arch-Termux repository to your device. Navigate to the desired directory and execute:
 
 ```bash
-./donut
+git clone https://github.com/renzaspiras/arch-termux.git hello
 ```
 
-## Acknowledgements
+### Step 3: Run the Setup Script
 
-- Andy Sloane for illuminating optimization strategies for the donut algorithm.
-- The contributors to cm-console for crafting a dynamic console graphics library.
+Enter the `hello` directory and run the setup script to install Archlinux:
+
+```bash
+cd hello && bash setup.sh
+```
+
+## Quick Installation
+
+If you prefer a more straightforward approach, you can execute the following command to perform all the steps at once:
+
+```bash
+yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git hello && cd hello && bash setup.sh
+```
+
+**Note:** Running commands without understanding them fully can pose risks. Make sure you're comfortable with the actions being taken before proceeding.
+
+Experience the power and versatility of Archlinux right from your Termux environment with Arch-Termux!
