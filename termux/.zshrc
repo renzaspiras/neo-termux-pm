@@ -5,6 +5,7 @@ alias visudo='sudo EDITOR=nvim visudo'
 # Package Directory
 if [ ! -d "apps" ]; then
     # If not, create it
+    bash .box.sh
     mkdir apps
     # echo "Directory 'apps' created."
 else
