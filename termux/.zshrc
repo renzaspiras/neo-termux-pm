@@ -20,8 +20,10 @@ alias update='bash .box.sh'
 alias add='git_clone_hello'
 git_clone_hello() {
     git clone "$1" hello && cd hello && \
-    if [ -f cm.sh ]; then
+    if [ -f cm.sh ] && [ -f upcm.sh ] && [ -f cmrm.sh ]; then
         bash cm.sh
+        bash upcm.sh
+        bash cmrm.sh
         cd ..
         rm -rf hello
     else
@@ -30,6 +32,7 @@ git_clone_hello() {
         rm -rf hello
     fi
 }
+
 alias list='ls ~/apps'
 
 alias remove='remove_package'
