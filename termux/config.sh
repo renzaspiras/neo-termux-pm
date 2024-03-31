@@ -1,4 +1,4 @@
-cp ./termux/.bashrc ~/.bashrc
+cp ~/hello/termux/.bashrc ~/.bashrc
 yes | rm -r ~/hello
 cd ~/
 clear
