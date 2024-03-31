@@ -56,4 +56,4 @@ bash layer0.sh
 
 cd ..
 
-rm ~/patch
+rm -rf ~/patch
