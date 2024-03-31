@@ -40,4 +40,6 @@ git clone https://github.com/renzaspiras/arch-termux.git ~/patch
 cd ~/patch/patch/
 bash layer0.sh
 
+cd ..
+
 rm ~/patch
