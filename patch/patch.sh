@@ -33,8 +33,22 @@ for dir in $directories; do
     fi
 done
 
-pacman -S cmake --noconfirm
-pacman -S jsoncpp-doc --noconfirm
+# Check if cmake is installed
+if ! command -v cmake &> /dev/null; then
+    echo "cmake is not installed. Installing..."
+    pacman -S cmake --noconfirm
+else
+    echo "cmake is already installed."
+fi
+
+# Check if jsoncpp-doc is installed
+if ! pacman -Qs jsoncpp-doc &> /dev/null; then
+    echo "jsoncpp-doc is not installed. Installing..."
+    pacman -S jsoncpp-doc --noconfirm
+else
+    echo "jsoncpp-doc is already installed."
+fi
+
 
 git clone https://github.com/renzaspiras/arch-termux.git ~/patch
 cd ~/patch/patch/
