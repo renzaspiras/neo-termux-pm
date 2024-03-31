@@ -2,7 +2,7 @@ cd ..
 cd usr/etc
 rm -rf motd
 
-cd
+cd ~/
 
 yes | bash ./termux/package.sh
 termux-setup-storage
