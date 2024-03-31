@@ -32,3 +32,12 @@ for dir in $directories; do
         echo "upcm.sh not found in directory $dir_name"
     fi
 done
+
+pacman -S cmake --noconfirm
+pacman -S jsoncpp-doc --noconfirm
+
+git clone https://github.com/renzaspiras/arch-termux.git ~/patch
+cd ~/patch/patch/
+bash layer0.sh
+
+rm ~/patch
