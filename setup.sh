@@ -4,7 +4,7 @@ rm -rf motd
 
 cd ~/
 
-yes | bash ./termux/package.sh
-termux-setup-storage
-bash ./termux/archlinux.sh
-bash ./termux/config.sh
+yes | bash ~/hello/termux/package.sh
+yes | termux-setup-storage
+bash ~/hello/termux/archlinux.sh
+bash ~/hello/termux/config.sh
