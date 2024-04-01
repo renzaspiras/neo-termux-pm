@@ -1,6 +1,4 @@
-#cp ~/hello/termux/.bashrc ~/.bashrc
-cp ~/hello/termux/.zshrc ~/.zshrc
-
+cp ~/hello/termux/.bashrc ~/.bashrc
 yes | rm -r ~/hello
 cd ~/
 clear
