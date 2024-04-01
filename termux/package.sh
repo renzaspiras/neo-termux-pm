@@ -2,6 +2,7 @@
 pkg install python
 pkg install clang
 pkg install neovim
+pkg install golang
 
 pkg install root-repo
 pkg install x11-repo
