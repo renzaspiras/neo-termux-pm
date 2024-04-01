@@ -11,3 +11,5 @@ pkg install golang
 # Utility
 pkg install git
 pkg install neovim
+
+pkg install proot-distro
