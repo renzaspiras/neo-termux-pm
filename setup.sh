@@ -11,4 +11,4 @@ yes | bash ~/hello/termux/package.sh
 
 yes | termux-setup-storage
 bash ~/hello/termux/archlinux.sh
-bash ~/hello/termux/config.sh
+bash ~/hello/termux/config.sh 
