@@ -13,8 +13,6 @@ pkg install cmake
 pkg install git
 pkg install neovim
 pkg install neofetch
-pkg install zsh
-pkg install neovim
 pkg install wget
 
 pkg install proot-distro
