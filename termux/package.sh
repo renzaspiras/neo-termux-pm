@@ -7,6 +7,7 @@ pkg install x11-repo
 pkg install python
 pkg install clang
 pkg install golang
+pkg install cmake
 
 # Utility
 pkg install git
