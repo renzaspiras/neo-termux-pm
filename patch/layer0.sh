@@ -1,1 +1,2 @@
-echo "this is cool"
+gcc cm-utils.c -o cm
+mv cm /bin
