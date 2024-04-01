@@ -1,8 +1,7 @@
 # Deletes the Default Messages on the startup of the termux
 cd ..
 cd usr/etc
-rm -rf motd
-
+rm -rf motd 
 # Goes to the main home....
 cd ~/
 
