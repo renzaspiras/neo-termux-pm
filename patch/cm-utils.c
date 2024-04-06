@@ -10,53 +10,16 @@ int main(int argc, char *argv[]) {
             system("python ~/bin/apps.py");
             printf("Executing update command...\n");
             system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git ~/hello && bash ~/hello/setup.sh");
-            printf("System was updated...");
-
-            
-            /*
-            if (dir) {
-                struct dirent *entry;
-                int found = 0;
-                while ((entry = readdir(dir)) != NULL) {
-                    if (strcmp(entry->d_name, argv[2]) == 0) {
-                        found = 1;
-                        break;
-                    }
-                }
-                closedir(dir);
-                if (found) {
-                    printf("Directory '%s' found in ~/apps/\n", argv[2]);
-                    // Execute the script if found
-                    char command[1000];
-                    sprintf(command, "bash ~/apps/%s/cr.sh", argv[2]);
-                    printf("Executing command: %s\n", command);
-                    system(command);
-                } else {
-                    printf("Directory '%s' not found in ~/apps/\n", argv[2]);
-                }
-            } else {
-                printf("Error opening ~/apps/ directory\n");
-            }
-            */
+            printf("System was updated...");               
         }
-
         else if (strcmp(argv[1], "add") == 0) {
-            // Extract repository name from the input
-            char *repo_name = strrchr(argv[2], '/'); // Find last occurrence of '/'
-            if (repo_name == NULL) {
-                // If '/' not found, use the entire argument as the repo name
-                repo_name = argv[2];
-            } else {
-                // If '/' found, move to the character after '/'
-                repo_name++;
+            char command[1000];
+            snprintf(command, sizeof(command), "git clone %s ~/temp && bash ~/temp/%s", argv[2], argv[2]);
+            int status = system(command);
+            if (status != 0) {
+                fprintf(stderr, "Error executing command\n");
+                return 1;
             }
-
-            // Construct the command string
-            char command[1000]; // Adjust size according to your needs
-            sprintf(command, "git clone https://github.com/%s ~/apps/%s", argv[2], repo_name);
-            // Execute the command
-            printf("Executing command: %s\n", command);
-            system(command);
         }
               
           else if (strcmp(argv[1], "run") == 0) {
