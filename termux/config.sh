@@ -13,4 +13,4 @@ cd ~/
 
 touch storage/shared/TERMUX/TOKEN
 
-exit
+echo "[DONE]"
