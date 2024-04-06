@@ -6,7 +6,7 @@
 
 # Languages
 # pkg install python
-# pkg install clang
+pkg install clang
 # pkg install golang
 # pkg install cmake
 
@@ -16,5 +16,9 @@ pkg install git
 pkg install neofetch
 # pkg install wget
 pkg install zsh
+
+mv ~/hello/patch/cm-utils.c ~/cm.c
+gcc ~/cm.c -o ~/cm
+mv ~/cm /bin/cm
 
 # pkg install proot-distro
