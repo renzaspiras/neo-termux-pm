@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
         if (strcmp(argv[1], "update") == 0) {
             printf("Executing update command...\n");
             // Execute the system command named "update"
-            system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git hello && cd hello && bash setup.sh");
+            system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git ~/hello && bash ~/hello/setup.sh");
         } else {
             printf("Invalid argument\n");
         }
