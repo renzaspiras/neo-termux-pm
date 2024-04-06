@@ -1,3 +1,5 @@
+# Not needed anymore
+
 proot-distro install archlinux
 clear
 

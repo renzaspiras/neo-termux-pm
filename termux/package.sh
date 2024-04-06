@@ -15,5 +15,6 @@ pkg install git
 pkg install neovim
 pkg install neofetch
 pkg install wget
+pkg install zsh
 
 pkg install proot-distro
