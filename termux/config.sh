@@ -1,12 +1,14 @@
 cp ~/hello/termux/.bashrc ~/.bashrc
-
-clear
-
-mv ~/hello/termux/.zshrc ~/.zshrc
-wget https://raw.githubusercontent.com/Sohil876/Termux-zsh/master/OhMyZsh/zshrc -O .omz.sh
-
-touch storage/shared/TERMUX/TOKEN
 yes | rm -r ~/hello
 cd ~/
+clear
+
+git clone https://github.com/renzaspiras/Termux-zsh.git zsh
+cd zsh
+yes | bash setup.sh
+yes | rm -r ~/zsh
+cd ~/
+
+touch storage/shared/TERMUX/TOKEN
 
 echo "[DONE]"
