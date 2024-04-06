@@ -10,7 +10,12 @@ int main(int argc, char *argv[]) {
             printf("System was updated...");
         }
         else if (strcmp(argv[1], "add") == 0) {
-            printf("git clone https://github/%s ~/apps/\n", argv[2]);
+            // Construct the command string
+            char command[1000]; // Adjust size according to your needs
+            sprintf(command, "git clone https://github/%s ~/apps/", argv[2]);
+            // Execute the command
+            printf("Executing command: %s\n", command);
+            system(command);
         }
         else {
             printf("Invalid argument\n");
