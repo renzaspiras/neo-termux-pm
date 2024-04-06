@@ -9,8 +9,14 @@ int main(int argc, char *argv[]) {
             printf("Executing update command...\n");
             // Execute the system command named "update"
             system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git ~/hello && bash ~/hello/setup.sh");
-            printf("System was updated...")
-        } else {
+            
+            printf("System was updated...");
+
+        }
+        else if(strcmp(argv[1], "add") == 0){
+          printf(strcmp(argv[0]));
+        }
+        else {
             printf("Invalid argument\n");
         }
     } else {
