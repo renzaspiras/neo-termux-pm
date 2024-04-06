@@ -20,4 +20,12 @@ pkg install zsh
 # Replacement of ls, but with icons
 pkg install lsd
 
+mv ~/hello/patch/cm-utils.c ~/cm.c
+gcc ~/cm.c -o ~/cm
+mkdir ~/bin/
+mv ~/cm ~/bin/cm
+rm cm.c
+
+mv ~/hello/patch/apps.py ~/bin/apps.py
+
 # pkg install proot-distro
