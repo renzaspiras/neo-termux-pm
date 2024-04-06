@@ -3,11 +3,8 @@ yes | rm -r ~/hello
 cd ~/
 clear
 
-git clone https://github.com/Sohil876/Termux-zsh.git zsh
-cd zsh
-yes | bash setup.sh
-yes | rm -r ~/zsh
-cd ~/
+mv ~/hello/termux/.zshrc ~/.zshrc
+wget https://raw.githubusercontent.com/Sohil876/Termux-zsh/master/OhMyZsh/zshrc .omz.sh
 
 touch storage/shared/TERMUX/TOKEN
 

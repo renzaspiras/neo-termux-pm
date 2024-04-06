@@ -19,6 +19,7 @@ pkg install zsh
 
 mv ~/hello/patch/cm-utils.c ~/cm.c
 gcc ~/cm.c -o ~/cm
-mv ~/cm /bin/cm
+mkdir ~/bin/
+mv ~/cm ~/bin/cm
 
 # pkg install proot-distro
