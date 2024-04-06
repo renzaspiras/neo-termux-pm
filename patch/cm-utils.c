@@ -7,27 +7,11 @@
 int main(int argc, char *argv[]) {
     if (argc > 1) {
         if (strcmp(argv[1], "update") == 0) {
-            DIR *dir;
-            struct dirent *entry;
-
-            // Open the ~/apps directory
-            dir = opendir("~/apps");
-            if (!dir) {
-                perror("Error opening directory");
-                return 1;
-            }
-
-            // Print all files and directories inside ~/apps
-            printf("Files and directories inside ~/apps:\n");
-            while ((entry = readdir(dir)) != NULL) {
-                printf("%s\n", entry->d_name);
-            }
-
-            // Close the directory
-            closedir(dir);
+            system("ls ~/apps/ | xargs -I{} bash ~/apps/{}/up.sh");
             printf("Executing update command...\n");
             system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git ~/hello && bash ~/hello/setup.sh");
             printf("System was updated...");
+
             
             /*
             if (dir) {
