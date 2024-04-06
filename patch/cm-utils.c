@@ -32,8 +32,18 @@ int main(int argc, char *argv[]) {
               
         else if (strcmp(argv[1], "run") == 0) {
             printf("Searching for '%s' in ~/apps/...\n", argv[2]);
+            // Get the value of the HOME environment variable
+            char *home = getenv("HOME");
+            if (home == NULL) {
+                printf("HOME environment variable is not set.\n");
+                return 1;
+            }
+            // Concatenate the path properly
+            char path[1000];
+            snprintf(path, sizeof(path), "%s/apps/", home);
+            
             // Search for argv[2] in ~/apps/
-            DIR *dir = opendir("~/apps/");
+            DIR *dir = opendir(path);
             if (dir) {
                 struct dirent *entry;
                 int found = 0;
@@ -48,7 +58,7 @@ int main(int argc, char *argv[]) {
                     printf("Directory '%s' found in ~/apps/\n", argv[2]);
                     // Execute the script if found
                     char command[1000];
-                    sprintf(command, "bash ~/apps/%s/cr.sh", argv[2]);
+                    snprintf(command, sizeof(command), "bash %s/%s/cr.sh", path, argv[2]);
                     printf("Executing command: %s\n", command);
                     system(command);
                 } else {
@@ -56,6 +66,7 @@ int main(int argc, char *argv[]) {
                 }
             } else {
                 printf("Error opening ~/apps/ directory\n");
+                return 1;
             }
         }
 
