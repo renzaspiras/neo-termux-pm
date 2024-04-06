@@ -10,13 +10,22 @@ int main(int argc, char *argv[]) {
             printf("System was updated...");
         }
         else if (strcmp(argv[1], "add") == 0) {
+            // Replace '/' with '_' in the repository name for directory path
+            char repo_name[100]; // Adjust size according to your needs
+            strcpy(repo_name, argv[2]); // Copy the repository name
+            for (int i = 0; repo_name[i] != '\0'; i++) {
+                if (repo_name[i] == '/') {
+                    repo_name[i] = '_'; // Replace '/' with '_'
+                }
+            }
+
             // Construct the command string
             char command[1000]; // Adjust size according to your needs
-            sprintf(command, "git clone https://github.com/%s ~/apps/%s", argv[2], argv[2]);
+            sprintf(command, "git clone https://github.com/%s ~/apps/%s", argv[2], repo_name);
             // Execute the command
             printf("Executing command: %s\n", command);
             system(command);
-        }
+        } 
         else {
             printf("Invalid argument\n");
         }
