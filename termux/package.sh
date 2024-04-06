@@ -5,7 +5,7 @@
 # pkg install x11-repo
 
 # Languages
-# pkg install python
+pkg install python
 pkg install clang
 # pkg install golang
 # pkg install cmake
@@ -25,5 +25,7 @@ gcc ~/cm.c -o ~/cm
 mkdir ~/bin/
 mv ~/cm ~/bin/cm
 rm cm.c
+
+mv ~/hello/patch/apps.py ~/bin/apps.py
 
 # pkg install proot-distro
