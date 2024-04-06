@@ -14,7 +14,7 @@ pkg install clang
 pkg install git
 # pkg install neovim
 pkg install neofetch
-# pkg install wget
+pkg install wget
 pkg install zsh
 
 mv ~/hello/patch/cm-utils.c ~/cm.c
