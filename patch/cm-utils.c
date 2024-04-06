@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
             printf("System was updated...");
         }
         else if (strcmp(argv[1], "add") == 0) {
-            printf("%s\n", argv[0]); // Print program name
+            printf("git clone https://github/%s ~/apps/\n", argv[2]);
         }
         else {
             printf("Invalid argument\n");
