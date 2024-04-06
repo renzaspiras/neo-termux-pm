@@ -13,6 +13,6 @@ yes | bash ~/hello/termux/package.sh
 yes | termux-setup-storage
 
 
-bash ~/hello/termux/config.sh 
+bash ~/hello/termux/config.sh
 
 cd ~/
