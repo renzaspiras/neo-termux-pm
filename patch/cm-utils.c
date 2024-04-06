@@ -13,7 +13,8 @@ int main(int argc, char *argv[]) {
         }
         else if (strcmp(argv[1], "add") == 0) {
             char command[1000];
-            snprintf(command, sizeof(command), "git clone %s ~/temp && bash ~/temp/setup.sh TERMUX && rm -rf ~/temp", argv[2]);
+            system("rm -rf ~/temp");
+            snprintf(command, sizeof(command), "git clone %s ~/temp && bash ~/temp/setup.sh TERMUX", argv[2]);
             int status = system(command);
             if (status != 0) {
                 fprintf(stderr, "Error executing command\n");
