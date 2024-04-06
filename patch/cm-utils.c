@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main(){
-  printf("CraftMatrix Package Manager [Under Developments]");
+  printf("x update");
   return 0;
 }

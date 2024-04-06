@@ -21,5 +21,6 @@ mv ~/hello/patch/cm-utils.c ~/cm.c
 gcc ~/cm.c -o ~/cm
 mkdir ~/bin/
 mv ~/cm ~/bin/cm
+rm cm.c
 
 # pkg install proot-distro

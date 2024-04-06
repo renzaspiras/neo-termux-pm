@@ -14,3 +14,6 @@ yes | termux-setup-storage
 
 
 bash ~/hello/termux/config.sh 
+cd
+
+cd ~/
