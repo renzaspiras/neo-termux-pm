@@ -7,7 +7,7 @@
 int main(int argc, char *argv[]) {
     if (argc > 1) {
         if (strcmp(argv[1], "update") == 0) {
-            system("ls ~/apps/ | xargs -I{} bash ~/apps/{}/up.sh");
+            system("python ~/bin/apps.py");
             printf("Executing update command...\n");
             system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git ~/hello && bash ~/hello/setup.sh");
             printf("System was updated...");
