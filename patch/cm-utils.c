@@ -9,14 +9,16 @@ int main(int argc, char *argv[]) {
             system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git ~/hello && bash ~/hello/setup.sh");
             printf("System was updated...");
         }
+
         else if (strcmp(argv[1], "add") == 0) {
-            // Replace '/' with '_' in the repository name for directory path
-            char repo_name[100]; // Adjust size according to your needs
-            strcpy(repo_name, argv[2]); // Copy the repository name
-            for (int i = 0; repo_name[i] != '\0'; i++) {
-                if (repo_name[i] == '/') {
-                    repo_name[i] = '_'; // Replace '/' with '_'
-                }
+            // Extract repository name from the input
+            char *repo_name = strrchr(argv[2], '/'); // Find last occurrence of '/'
+            if (repo_name == NULL) {
+                // If '/' not found, use the entire argument as the repo name
+                repo_name = argv[2];
+            } else {
+                // If '/' found, move to the character after '/'
+                repo_name++;
             }
 
             // Construct the command string
@@ -25,7 +27,8 @@ int main(int argc, char *argv[]) {
             // Execute the command
             printf("Executing command: %s\n", command);
             system(command);
-        } 
+        }
+
         else {
             printf("Invalid argument\n");
         }
