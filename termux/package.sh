@@ -26,6 +26,6 @@ mkdir ~/bin/
 mv ~/cm ~/bin/cm
 rm cm.c
 
-mv ~/hello/patch/apps.py ~/bin/apps.py
+mv ~/hello/patch/apps.sh ~/bin/apps.sh
 
 # pkg install proot-distro
