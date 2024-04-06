@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
         else if (strcmp(argv[1], "add") == 0) {
             // Construct the command string
             char command[1000]; // Adjust size according to your needs
-            sprintf(command, "git clone https://github.com/%s ~/apps/", argv[2]);
+            sprintf(command, "git clone https://github.com/%s ~/apps/%s", argv[2]);
             // Execute the command
             printf("Executing command: %s\n", command);
             system(command);
