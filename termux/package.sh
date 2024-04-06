@@ -17,6 +17,9 @@ pkg install neofetch
 pkg install wget
 pkg install zsh
 
+# Replacement of ls, but with icons
+pkg install lsd
+
 mv ~/hello/patch/cm-utils.c ~/cm.c
 gcc ~/cm.c -o ~/cm
 mkdir ~/bin/
