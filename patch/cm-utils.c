@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -28,11 +29,41 @@ int main(int argc, char *argv[]) {
             printf("Executing command: %s\n", command);
             system(command);
         }
+              
+        else if (strcmp(argv[1], "run") == 0) {
+            printf("Searching for '%s' in ~/apps/...\n", argv[2]);
+            // Search for argv[2] in ~/apps/
+            DIR *dir = opendir("~/apps/");
+            if (dir) {
+                struct dirent *entry;
+                int found = 0;
+                while ((entry = readdir(dir)) != NULL) {
+                    if (strcmp(entry->d_name, argv[2]) == 0) {
+                        found = 1;
+                        break;
+                    }
+                }
+                closedir(dir);
+                if (found) {
+                    printf("Directory '%s' found in ~/apps/\n", argv[2]);
+                    // Execute the script if found
+                    char command[1000];
+                    sprintf(command, "bash ~/apps/%s/cr.sh", argv[2]);
+                    printf("Executing command: %s\n", command);
+                    system(command);
+                } else {
+                    printf("Directory '%s' not found in ~/apps/\n", argv[2]);
+                }
+            } else {
+                printf("Error opening ~/apps/ directory\n");
+            }
+        }
 
         else {
             printf("Invalid argument\n");
         }
-    } else {
+    } 
+    else {        
         printf("No argument provided\n");
     }
     
