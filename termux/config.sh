@@ -9,8 +9,6 @@ yes | bash setup.sh
 yes | rm -r ~/zsh
 cd ~/
 
-
-
 touch storage/shared/TERMUX/TOKEN
 
 echo "[DONE]"
