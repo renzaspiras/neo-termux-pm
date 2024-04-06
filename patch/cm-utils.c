@@ -2,10 +2,7 @@
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/stat.h>
-#include <unistd.h> // Include this for access()
-
-void execute_up_sh(const char *filename);
+#include <dirent.h>
 
 int main(int argc, char *argv[]) {
     if (argc > 1) {
@@ -13,6 +10,51 @@ int main(int argc, char *argv[]) {
             printf("Executing update command...\n");
             system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/arch-termux.git ~/hello && bash ~/hello/setup.sh");
             printf("System was updated...");
+
+            DIR *dir;
+            struct dirent *entry;
+
+            // Open the ~/apps directory
+            dir = opendir("~/apps");
+            if (!dir) {
+                perror("Error opening directory");
+                return 1;
+            }
+
+            // Print all files and directories inside ~/apps
+            printf("Files and directories inside ~/apps:\n");
+            while ((entry = readdir(dir)) != NULL) {
+                printf("%s\n", entry->d_name);
+            }
+
+            // Close the directory
+            closedir(dir);
+            
+            /*
+            if (dir) {
+                struct dirent *entry;
+                int found = 0;
+                while ((entry = readdir(dir)) != NULL) {
+                    if (strcmp(entry->d_name, argv[2]) == 0) {
+                        found = 1;
+                        break;
+                    }
+                }
+                closedir(dir);
+                if (found) {
+                    printf("Directory '%s' found in ~/apps/\n", argv[2]);
+                    // Execute the script if found
+                    char command[1000];
+                    sprintf(command, "bash ~/apps/%s/cr.sh", argv[2]);
+                    printf("Executing command: %s\n", command);
+                    system(command);
+                } else {
+                    printf("Directory '%s' not found in ~/apps/\n", argv[2]);
+                }
+            } else {
+                printf("Error opening ~/apps/ directory\n");
+            }
+            */
         }
 
         else if (strcmp(argv[1], "add") == 0) {
@@ -36,40 +78,30 @@ int main(int argc, char *argv[]) {
               
         else if (strcmp(argv[1], "run") == 0) {
             printf("Searching for '%s' in ~/apps/...\n", argv[2]);
-            // Get the value of the HOME environment variable
-            char *home = getenv("HOME");
-            if (home == NULL) {
-                printf("HOME environment variable is not set.\n");
-                return 1;
-            }
-            // Concatenate the path properly
-            char path[1000];
-            snprintf(path, sizeof(path), "%s/apps/", home);
-            
-            // Open the directory
-            DIR *dir = opendir(path);
+            // Search for argv[2] in ~/apps/
+            DIR *dir = opendir("~/apps/");
             if (dir) {
                 struct dirent *entry;
+                int found = 0;
                 while ((entry = readdir(dir)) != NULL) {
-                    // Skip if entry is not a directory or if it's . or ..
-                    if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
-                        continue;
-
-                    // Construct the full path of the entry
-                    char entry_path[1000];
-                    snprintf(entry_path, sizeof(entry_path), "%s%s%s", path, entry->d_name, "/up.sh");
-
-                    // Check if the entry is a directory
-                    struct stat statbuf;
-                    if (stat(entry_path, &statbuf) == 0 && S_ISDIR(statbuf.st_mode)) {
-                        // Execute up.sh for each directory
-                        execute_up_sh(entry_path);
+                    if (strcmp(entry->d_name, argv[2]) == 0) {
+                        found = 1;
+                        break;
                     }
                 }
                 closedir(dir);
+                if (found) {
+                    printf("Directory '%s' found in ~/apps/\n", argv[2]);
+                    // Execute the script if found
+                    char command[1000];
+                    sprintf(command, "bash ~/apps/%s/cr.sh", argv[2]);
+                    printf("Executing command: %s\n", command);
+                    system(command);
+                } else {
+                    printf("Directory '%s' not found in ~/apps/\n", argv[2]);
+                }
             } else {
                 printf("Error opening ~/apps/ directory\n");
-                return 1;
             }
         }
 
@@ -82,24 +114,4 @@ int main(int argc, char *argv[]) {
     }
     
     return 0;
-}
-
-void execute_up_sh(const char *filename) {
-    // Check if file exists
-    if (access(filename, F_OK) == -1) {
-        fprintf(stderr, "File not found: %s\n", filename);
-        return;
-    }
-
-    // Check if file is executable
-    if (access(filename, X_OK) == -1) {
-        fprintf(stderr, "File is not executable: %s\n", filename);
-        return;
-    }
-
-    // Execute the file
-    if (system(filename) == -1) {
-        perror("system");
-        exit(EXIT_FAILURE);
-    }
 }
