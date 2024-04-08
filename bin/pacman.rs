@@ -1,3 +1,3 @@
 fn main(){
-  printf!("Testing....");
+  println!("Testing....");
 }
