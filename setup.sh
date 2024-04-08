@@ -46,7 +46,7 @@ mkdir storage/shared/TERMUX/filesystem/boot
 
 
 # Injecting My Own Config Achitecture
-mv ~/hello/termux/lib/cm.sh storage/shared/TERMUX/filesystem/etc/cm.sh
+mv ~/hello/termux/lib/cm.py storage/shared/TERMUX/filesystem/etc/cm.py
 
 
 # Installs the updates, and dependencies

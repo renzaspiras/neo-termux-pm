@@ -1,3 +1,3 @@
 clear
-bash storage/shared/TERMUX/filesystem/etc/cm.sh
+python storage/shared/TERMUX/filesystem/etc/cm.py
 exit
