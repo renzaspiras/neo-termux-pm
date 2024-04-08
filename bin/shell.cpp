@@ -62,11 +62,20 @@ int main(){
       for (const auto& file : files) {
         if(file == getFirstWord(input)){
           found = true;
-          const char* command = input.c_str();     
-          string full_command = directory_path + "/" + command;  
+          string full_command;
+          if(input.find('/') != string::npos){
+            full_command = input;
+          }
+          else {
+            full_command = directory_path + "/" + input;
+          }
           system(full_command.c_str());
           cout << "" << endl;
-          break;          
+          break;
+
+          //const char* command = input.c_str();     
+          //string full_command = directory_path + "/" + command;  
+          //system(full_command.c_str()); 
         }
       }
       if(!found){
