@@ -1,5 +1,11 @@
 import os
+# Remove the original 'bin' directory from the PATH if it exists
+original_bin_path = '/data/data/com.termux/files/usr/bin'
+os.environ['PATH'] = ':'.join([path for path in os.environ['PATH'].split(':') if path != original_bin_path])
+
+# Add the new 'bin' directory to the PATH
 os.environ['PATH'] += ':/storage/shared/TERMUX/filesystem/bin'
+
 # Infinite loop to continuously take user input and execute it
 while True:
     # Print the current working directory with color
