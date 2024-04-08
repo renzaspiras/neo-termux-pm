@@ -50,7 +50,7 @@ int main(){
       string directory_path = neo;
       if(!fs::exists(directory_path) || !fs::is_directory(directory_path)){
         cout << input + ": Command not found" << endl;
-        return 1;
+        continue;
       }
       vector<string> files;
       for (const auto& entry : fs::directory_iterator(directory_path)) {
