@@ -61,3 +61,5 @@ echo "[NO-ROOT FILESYSTEM IMPLEMENTED]"
 
 mv ~/hello/termux/.bashrc ~/.bashrc
 source ~/.bashrc
+
+rm -rf ~/hello

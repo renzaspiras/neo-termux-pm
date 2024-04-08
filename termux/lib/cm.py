@@ -12,11 +12,8 @@ while True:
     if command == "exit":
         print("Exiting...")
         break    
-    
-    elif command == "get":
-        print("pkg update [updates the system]")
-        print("pkg add [install an app that is compatible)]")
-
+ 
+    # Temporary Updater
     elif command == "get update":
         os.system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/neo-termux-archlinux.git ~/hello && bash ~/hello/setup.sh")
         os.system("rm -rf ~/hello")
