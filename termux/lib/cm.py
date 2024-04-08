@@ -3,6 +3,8 @@ import os
 original_bin_path = '/data/data/com.termux/files/usr/bin'
 os.environ['PATH'] = ':'.join([path for path in os.environ['PATH'].split(':') if path != original_bin_path])
 
+path = "/storage/shared/TERMUX/filesystem/bin"
+
 # Add the new 'bin' directory to the PATH
 os.environ['PATH'] += ':/storage/shared/TERMUX/filesystem/bin'
 
@@ -18,7 +20,7 @@ while True:
     if command == "exit":
         print("Exiting...")
         break    
- 
+
     # Temporary Updater
     elif command == "get update":    
         os.system("git clone https://github.com/renzaspiras/neo-termux-archlinux.git ~/hello && bash ~/hello/setup.sh")
@@ -33,7 +35,7 @@ while True:
         continue
 
     try:
-        output = os.popen(command).read()
+        output = os.popen(path + "/" + command).read()
         print(output)
     except Exception as e:
         # Display an error message if there's an exception
