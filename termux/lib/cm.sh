@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Home Directory
+ cd storage/shared/TERMUX/filesystem/home
+
+ 
 # Infinite loop to continuously take user input and execute it
 while true; do
     # Print the current working directory with color

@@ -50,9 +50,9 @@ mv ~/hello/termux/lib/cm.sh storage/shared/TERMUX/filesystem/etc/cm.sh
 
 
 # Installs the updates, and dependencies
-#yes | bash ~/hello/TERMUX/package.sh
-#bash ~/hello/TERMUX/config.sh
-#cd ~/
+yes | bash ~/hello/TERMUX/package.sh
+
+gcc ~/hello/patch/cm-utils.c -o storage/shared/TERMUX/filesystem/bin/get
 
 # on finish
 touch storage/shared/TERMUX/TOKEN
