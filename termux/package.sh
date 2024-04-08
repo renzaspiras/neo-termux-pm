@@ -22,7 +22,7 @@ pkg install lsd
 
 mv ~/hello/patch/cm-utils.c ~/cm.c
 gcc ~/cm.c -o ~/cm
-mv ~/cm storage/shared/TERMUX/filesystem/bin/cm
+mv ~/cm ~/neo/bin/cm
 rm cm.c
 
 # mv ~/hello/patch/apps.py ~/bin/apps.py
