@@ -11,7 +11,8 @@ while true; do
     # Check if the user wants to exit
     if [ "$command" == "exit" ]; then
         echo "Exiting..."
-        exit
+        #exit
+        break
     fi
     
     # Execute the command provided by the user if it exists
