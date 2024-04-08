@@ -52,4 +52,4 @@ mv ~/hello/termux/.bashrc ~/.bashrc
 #cd ~/
 
 # on finish
-mkdir storage/shared/TERMUX/TOKEN
+touch storage/shared/TERMUX/TOKEN
