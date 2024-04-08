@@ -11,7 +11,6 @@ while true; do
     # Check if the user wants to exit
     if [ "$command" == "exit" ]; then
         echo "Exiting..."
-        #exit
         break
     fi
     
