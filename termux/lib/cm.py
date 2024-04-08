@@ -48,7 +48,7 @@ while True:
     else:
         try:
             output = os.popen("./storage/shared/TERMUX/filesystem/bin/" + command).read()
-            print(output)
+            #print(output)
         except Exception as e:
             # Display an error message if there's an exception
             print("\033[31mError: {}\033[0m".format(e))  # Red color for the error message
