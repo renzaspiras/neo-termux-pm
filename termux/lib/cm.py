@@ -31,7 +31,7 @@ while True:
         break    
 
     # Temporary Updater
-    elif command == "get update":    
+    elif command == "get fu":    
         os.system("git clone https://github.com/renzaspiras/neo-termux-archlinux.git ~/hello && bash ~/hello/setup.sh")
         os.system("rm -rf ~/hello")
 
