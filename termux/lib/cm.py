@@ -11,11 +11,23 @@ while True:
     # Check if the user wants to exit
     if command == "exit":
         print("Exiting...")
-        break
+        break    
     
+    elif command == "get":
+        print("pkg update [updates the system]")
+        print("pkg add [install an app that is compatible)]")
+
     elif command == "get update":
         os.system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/neo-termux-archlinux.git ~/hello && bash ~/hello/setup.sh")
         os.system("rm -rf ~/hello")
+
+    elif command.startswith("cd "):
+        try:
+            directory = command.split(" ")[1]
+            os.chdir(directory)
+        except Exception as e:
+            print("\033[31mError: {}\033[0m".format(e))  # Red color for the error message
+        continue
 
     try:
         output = os.popen(command).read()
