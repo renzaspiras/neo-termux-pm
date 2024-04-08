@@ -44,8 +44,6 @@ mkdir storage/shared/TERMUX/filesystem/srv
 # Directory for bootloader files
 mkdir storage/shared/TERMUX/filesystem/boot  
 
-mv ~/hello/termux/.bashrc ~/.bashrc
-source ~/.bashrc
 
 # Injecting My Own Config Achitecture
 mv ~/hello/termux/lib/cm.sh storage/shared/TERMUX/filesystem/etc/cm.sh
@@ -60,3 +58,6 @@ mv ~/hello/termux/lib/cm.sh storage/shared/TERMUX/filesystem/etc/cm.sh
 touch storage/shared/TERMUX/TOKEN
 echo "[PLEASE RE-OPEN THE APP]"
 echo "[NO-ROOT FILESYSTEM IMPLEMENTED]"
+
+mv ~/hello/termux/.bashrc ~/.bashrc
+source ~/.bashrc
