@@ -63,3 +63,5 @@ mv ~/hello/termux/.bashrc ~/.bashrc
 source ~/.bashrc
 
 rm -rf ~/hello
+
+chmod 755 storage/shared/TERMUX/filesystem/bin/*

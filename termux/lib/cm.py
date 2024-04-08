@@ -27,6 +27,7 @@ while True:
     # Check if the user wants to exit
     if command == "exit":
         print("Exiting...")
+        os.system("exit")
         break    
 
     # Temporary Updater
