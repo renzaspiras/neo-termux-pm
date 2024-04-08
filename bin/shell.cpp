@@ -47,9 +47,9 @@ int main(){
       string test = "./test/bin/";
       string neo = "~/neo/bin/";
 
-      string directory_path = debug;
+      string directory_path = neo;
       if(!fs::exists(directory_path) || !fs::is_directory(directory_path)){
-        cerr << "Command not found" << endl;
+        cout << input + ": Command not found" << endl;
         return 1;
       }
       vector<string> files;
@@ -70,7 +70,7 @@ int main(){
         }
       }
       if(!found){
-        cout << "Command not found" << endl;
+        cout << input + ": Command not found" << endl;
       }
     }
   }
