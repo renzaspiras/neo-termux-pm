@@ -10,3 +10,5 @@ for j in binary:
     os.system(f"rustc ~/hello/bin/{j} -o ~/neo/bin/{executable}")  
   elif(extention == "cpp"):
     os.system(f"g++ ~/hello/bin/{j} -o ~/neo/bin/{executable}")
+  elif(extention == "c++"):
+    os.system(f"g++ ~/hello/bin/{j} -o ~/neo/bin/{executable} -lncurses")

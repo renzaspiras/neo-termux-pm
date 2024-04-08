@@ -5,6 +5,17 @@ namespace fs = std::filesystem;
 #include <vector>
 #include <cstdlib> // Include the header for system()
 
+// ANSI escape codes for colors
+#define RED     "\033[0;31m"
+#define GREEN   "\033[0;32m"
+#define YELLOW  "\033[0;33m"
+#define BLUE    "\033[0;34m"
+#define PURPLE  "\033[0;35m"
+#define CYAN    "\033[0;36m"
+#define WHITE   "\033[0;37m"
+#define RESET   "\033[0m"
+
+
 //--> This version only works on termux
 std::string getFirstWord(const std::string& str) {
     // Find the position of the first space character
@@ -26,7 +37,8 @@ int main(){
     /* code */
     string input;
 
-    cout << "\n┌──(root@archlinux)\n└─$ ";
+    std::cout << "\n" << GREEN << "┌──(root@archlinux)" << RESET << std::endl;
+    std::cout << WHITE << "└─" << RESET << "$ ";
     getline(cin, input);
 
     if(input == "exit"){
