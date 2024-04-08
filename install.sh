@@ -9,6 +9,8 @@ elif [ "$1" == "debug" ]; then
   python ./debug/compiler.py
   mv ./compiled/* ../bin
 
+  ../bin/shell
+
 else
   echo "not"
 fi
