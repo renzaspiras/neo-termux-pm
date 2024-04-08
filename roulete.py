@@ -8,11 +8,11 @@ lang = [
 ]
 
 todo = [
-  "shell",
+  "shell", #--> Using C++
   "ls",
   "cd",
   #"mkdir", --> Done using Rust....
-  "cat",
+  # "cat", --> Done using Rust...
   "pwd",
   "cp",
   "mv",
