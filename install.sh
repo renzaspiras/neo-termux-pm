@@ -5,7 +5,9 @@ if [ "$1" == "neotermux" ]; then
 
 elif [ "$1" == "debug" ]; then
   mkdir compiled
+  mkdir ../bin
   python ./debug/compiler.py
+  mv ./compiled/* ../bin
 
 else
   echo "not"
