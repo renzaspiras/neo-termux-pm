@@ -1,1 +1,3 @@
-sue sdt::env;
+fn main(){
+  printf!("Testing....");
+}
