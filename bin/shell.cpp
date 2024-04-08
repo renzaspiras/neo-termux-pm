@@ -5,11 +5,17 @@ namespace fs = std::filesystem;
 #include <vector>
 #include <cstdlib> // Include the header for system()
 
-string getFirstWord(const string& str) {
-    istringstream iss(str);
-    string firstWord;
-    iss >> firstWord;
-    return firstWord;
+std::string getFirstWord(const std::string& str) {
+    // Find the position of the first space character
+    size_t pos = str.find_first_of(" \t");
+
+    // Extract the substring from the beginning of the string up to the space
+    if (pos != std::string::npos) {
+        return str.substr(0, pos);
+    } else {
+        // If no space is found, return the entire string
+        return str;
+    }
 }
 
 
@@ -40,9 +46,9 @@ int main(){
       string test = "./test/bin/";
       string neo = "~/neo/bin/";
 
-      string directory_path = neo;
+      string directory_path = debug;
       if(!fs::exists(directory_path) || !fs::is_directory(directory_path)){
-        cerr << "Error" << endl;
+        cerr << "Command not found" << endl;
         return 1;
       }
       vector<string> files;
@@ -55,8 +61,9 @@ int main(){
       for (const auto& file : files) {
         if(file == getFirstWord(input)){
           found = true;
-          const char* command = input.c_str();
-          system(command);
+          const char* command = input.c_str();     
+          string full_command = directory_path + "/" + command;  
+          system(full_command.c_str());
           cout << "" << endl;
           break;          
         }

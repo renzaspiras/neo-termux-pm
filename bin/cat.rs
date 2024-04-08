@@ -8,7 +8,7 @@ fn main(){
   if args.len() == 1 {
     println!("No arguments provided");
     return; // Exit the program early
-}
+  }
   else if args.len() > 2{
     println!("Too Many Arguments");
     return;
@@ -37,6 +37,5 @@ fn main(){
   }
   else{
     println!("No Such File on directory");
-  }
-  
+  }  
 }
