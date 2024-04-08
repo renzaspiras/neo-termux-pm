@@ -7,6 +7,6 @@ for j in binary:
   extention = j.split(".")[1]
 
   if(extention == "rs"):
-    os.system(f"rustc ./neo/bin/{j} -o compiled/{executable}")  
+    os.system(f"rustc ./hello/bin/{j} -o compiled/{executable}")  
   elif(extention == "cpp"):
-    os.system(f"g++ ./neo/bin/{j} -o compiled/{executable}")
+    os.system(f"g++ ./hello/bin/{j} -o compiled/{executable}")
