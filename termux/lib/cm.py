@@ -1,6 +1,21 @@
 import os
 import readline
 
+# Define a function to handle key press events
+def key_pressed(event):
+    if event.keycode == 38:  # Up arrow key
+        if readline.get_current_history_length() > 1:
+            readline.replace_line(readline.get_history_item(readline.get_current_history_length() - 2))
+            readline.redisplay()
+    elif event.keycode == 40:  # Down arrow key
+        if readline.get_current_history_length() > readline.get_current_history_index() + 1:
+            readline.replace_line(readline.get_history_item(readline.get_current_history_index() + 1))
+            readline.redisplay()
+
+# Bind the function to handle key press events
+readline.parse_and_bind('<KeyPress>?: "\033[38~"')
+readline.parse_and_bind('<KeyPress>?: "\033[40~"')
+
 # Infinite loop to continuously take user input and execute it
 while True:
     # Print the current working directory with color
@@ -9,9 +24,6 @@ while True:
     # Prompt the user to input a command
     command = input("\033[32m└─$\033[0m ")  # Green color for the command prompt
 
-    # Save the command to the history
-    readline.add_history(command)
-    
     # Check if the user wants to exit
     if command == "exit":
         print("Exiting...")
@@ -34,10 +46,12 @@ while True:
         continue
 
     else:
-        print(command)
         try:
-            output = os.popen(command).read()
+            output = os.popen("./storage/shared/TERMUX/filesystem/bin/" + command).read()
             print(output)
         except Exception as e:
             # Display an error message if there's an exception
             print("\033[31mError: {}\033[0m".format(e))  # Red color for the error message
+
+    # Add the command to the history
+    readline.add_history(command)
