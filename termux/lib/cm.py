@@ -14,8 +14,8 @@ while True:
         break    
  
     # Temporary Updater
-    elif command == "get update":
-        os.system("yes | pkg upgrade && yes | pkg install git && git clone https://github.com/renzaspiras/neo-termux-archlinux.git ~/hello && bash ~/hello/setup.sh")
+    elif command == "get update":    
+        os.system("git clone https://github.com/renzaspiras/neo-termux-archlinux.git ~/hello && bash ~/hello/setup.sh")
         os.system("rm -rf ~/hello")
 
     elif command.startswith("cd "):
