@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Home Directory
+export PATH="$PATH:/storage/shared/TERMUX/filesystem/bin"
 # Infinite loop to continuously take user input and execute it
 while true; do
     # Print the current working directory with color
