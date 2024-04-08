@@ -45,7 +45,7 @@ int main(){
     else{
       string debug = "./";
       string test = "./test/bin/";
-      string neo = "~/neo/bin/";
+      string neo = "/data/data/com.termux/files/home/neo/bin/";
 
       string directory_path = neo;
       if(!fs::exists(directory_path) || !fs::is_directory(directory_path)){
@@ -72,10 +72,6 @@ int main(){
           system(full_command.c_str());
           cout << "" << endl;
           break;
-
-          //const char* command = input.c_str();     
-          //string full_command = directory_path + "/" + command;  
-          //system(full_command.c_str()); 
         }
       }
       if(!found){
