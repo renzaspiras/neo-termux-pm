@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Home Directory
- cd storage/shared/TERMUX/filesystem/home
+cd storage/shared/TERMUX/filesystem/home
 
- 
 # Infinite loop to continuously take user input and execute it
 while true; do
     # Print the current working directory with color
@@ -18,11 +17,7 @@ while true; do
         break
     fi
     
-    # Execute the command provided by the user if it exists
-    if command -v "$command" &> /dev/null; then
-        eval "$command"
-    else
-        # Display an error message if the command does not exist
-        echo -e "\e[31mError: Command '$command' not found.\e[0m"  # Red color for the error message
-    fi
+    # Execute the command provided by the user and print the output
+    output=$(eval "$command" 2>&1)
+    echo "$output"
 done

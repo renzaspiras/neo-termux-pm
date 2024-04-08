@@ -13,9 +13,9 @@ pkg install clang
 # Utility
 pkg install git
 # pkg install neovim
-pkg install neofetch
+# pkg install neofetch
 pkg install wget
-pkg install zsh
+# pkg install zsh
 
 # Replacement of ls, but with icons
 pkg install lsd
