@@ -18,6 +18,6 @@ while true; do
     if command -v "$command" &> /dev/null; then
         eval "$command"
     else
-        echo "Command not found in the binary system."
+        echo "Error: Command '$command' not found."
     fi
 done
