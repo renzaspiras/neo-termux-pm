@@ -1,4 +1,5 @@
 import os
+import readline
 
 # Infinite loop to continuously take user input and execute it
 while True:
@@ -7,6 +8,9 @@ while True:
     
     # Prompt the user to input a command
     command = input("\033[32m└─$\033[0m ")  # Green color for the command prompt
+
+    # Save the command to the history
+    readline.add_history(command)
     
     # Check if the user wants to exit
     if command == "exit":
@@ -24,6 +28,9 @@ while True:
             os.chdir(directory)
         except Exception as e:
             print("\033[31mError: {}\033[0m".format(e))  # Red color for the error message
+        continue
+
+    elif command == "":  # If the user presses Enter without typing anything
         continue
 
     else:
