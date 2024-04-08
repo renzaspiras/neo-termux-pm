@@ -1,3 +1,1 @@
-clear
-zsh
-exit
+echo "Hello There"
