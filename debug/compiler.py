@@ -1,6 +1,6 @@
 import os
 
-binary = os.listdir("~/hello/bin")
+binary = os.listdir("./bin")
 
 for j in binary:
   executable = j.split(".")[0]
