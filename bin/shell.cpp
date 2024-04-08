@@ -5,6 +5,7 @@ namespace fs = std::filesystem;
 #include <vector>
 #include <cstdlib> // Include the header for system()
 
+//--> This version only works on termux
 std::string getFirstWord(const std::string& str) {
     // Find the position of the first space character
     size_t pos = str.find_first_of(" \t");
@@ -25,7 +26,7 @@ int main(){
     /* code */
     string input;
 
-    cout << "\n┌──(Testing)\n└─$ ";
+    cout << "\n┌──(root@archlinux)\n└─$ ";
     getline(cin, input);
 
     if(input == "exit"){

@@ -65,3 +65,10 @@ source ~/.bashrc
 rm -rf ~/hello
 
 chmod 755 neo/bin/*
+
+rm -rf hello
+git clone https://github.com/renzaspiras/neo-termux-archlinux.git hello
+cd hello
+bash install.sh neotermux
+rm -rf ~/hello
+cd ~/
