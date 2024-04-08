@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     if (argc > 1) {
         if (strcmp(argv[1], "update") == 0) {
             printf("Executing update command...\n");            
-            system("rm -rf ~/hello && git clone https://github.com/renzaspiras/neo-termux-archlinux.git ~/hello && bash ~/hello/update.sh neotermux");
+            system("rm -rf ~/hello && git clone https://github.com/renzaspiras/neo-termux-archlinux.git ~/hello && bash /data/data/com.termux/files/home/update.sh neotermux");
             printf("System was updated...");               
         }
 
