@@ -26,7 +26,8 @@ while True:
             print("\033[31mError: {}\033[0m".format(e))  # Red color for the error message
         continue
 
-    else:        
+    else:
+        print(command)
         try:
             output = os.popen(command).read()
             print(output)
