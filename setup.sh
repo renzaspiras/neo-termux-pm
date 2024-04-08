@@ -45,6 +45,7 @@ mkdir storage/shared/TERMUX/filesystem/srv
 mkdir storage/shared/TERMUX/filesystem/boot  
 
 mv ~/hello/termux/.bashrc ~/.bashrc
+source ~/.bashrc
 
 # Installs the updates, and dependencies
 #yes | bash ~/hello/TERMUX/package.sh
