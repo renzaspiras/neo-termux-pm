@@ -21,7 +21,7 @@ fn main(){
       //--> Everything starts here.....
       match fs::read_to_string(path){
         Ok(content) =>{
-          println!("{}\n", content);
+          println!("{}", content);
         }
         Err(err) =>{
           eprintln!("Error reading file: {}", err);
