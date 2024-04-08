@@ -14,6 +14,10 @@ while true; do
         break
     fi
     
-    # Execute the command provided by the user
-    eval "$command"
+    # Execute the command provided by the user if it exists
+    if command -v "$command" &> /dev/null; then
+        eval "$command"
+    else
+        echo "Command not found in the binary system."
+    fi
 done
