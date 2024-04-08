@@ -1,5 +1,5 @@
 import os
-
+os.environ['PATH'] += ':/storage/shared/TERMUX/filesystem/bin'
 # Infinite loop to continuously take user input and execute it
 while True:
     # Print the current working directory with color
