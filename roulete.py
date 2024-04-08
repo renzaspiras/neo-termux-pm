@@ -9,16 +9,16 @@ lang = [
 
 todo = [
   "shell", #--> Using C++
-  "ls",
-  "cd",
+  "ls", # --> zig
+  "cd", # --> using cp
   #"mkdir", --> Done using Rust....
   # "cat", --> Done using Rust...
-  "pwd",
-  "cp",
-  "mv",
-  "grep",
-  "kill",
-  "pacman"
+  "pwd", # --> using C
+  "cp", # --> using C
+  "mv", # --> using C++
+  "grep", # --> using Rust
+  "kill", # --> using C
+  "pacman" # --> using C
 ]
 
 language = lang[(random.randint(0, len(lang))) -1]

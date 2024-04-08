@@ -14,3 +14,5 @@ for j in binary:
     os.system(f"g++ ~/hello/bin/{j} -o ~/neo/bin/{executable} -lncurses")
   elif(extention == "c"):
     os.system(f"gcc ~/hello/bin/{j} -o ~/neo/bin/{executable}")
+  elif(extention == "zig"):
+    os.system(f"zig run ~/hello/bin/{j} -o ~/neo/bin/{executable}")    
