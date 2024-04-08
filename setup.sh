@@ -58,3 +58,4 @@ mv ~/hello/termux/lib/cm.sh storage/shared/TERMUX/filesystem/etc/cm.sh
 
 # on finish
 touch storage/shared/TERMUX/TOKEN
+echo "[NO-ROOT FILESYSTEM IMPLEMENTED]"
