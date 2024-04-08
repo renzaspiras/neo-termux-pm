@@ -48,7 +48,7 @@ while True:
 
     else:
         try:
-            output = os.popen("./storage/shared/TERMUX/filesystem/bin/" + command).read()
+            output = os.popen("./neo/bin/" + command).read()
             #print(output)
         except Exception as e:
             # Display an error message if there's an exception
