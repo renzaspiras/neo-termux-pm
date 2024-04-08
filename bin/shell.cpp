@@ -3,6 +3,20 @@
 using namespace std;
 
 int main(){
-  cout << "Hello World";
+  while (true)
+  {
+    /* code */
+    string input;
+
+    cout << "┌──(Testing)\n└─$ ";
+    cin >> input;
+
+    if(input == "exit"){
+      break;
+    }
+
+    //cout << input << endl << endl;
+  }
+  
   return 0;
 }
