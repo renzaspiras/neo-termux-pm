@@ -38,7 +38,7 @@ int main(){
     }
 
     else if(input == "clear"){
-      cout << "\033[2J\033[1;1H"; 
+      cout << "\033[2J"; 
     }
 
     else{
