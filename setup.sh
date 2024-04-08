@@ -47,6 +47,10 @@ mkdir storage/shared/TERMUX/filesystem/boot
 mv ~/hello/termux/.bashrc ~/.bashrc
 source ~/.bashrc
 
+# Injecting My Own Config Achitecture
+mv ~/hello/termux/lib/cm.sh storage/shared/TERMUX/filesystem/etc/cm.sh
+
+
 # Installs the updates, and dependencies
 #yes | bash ~/hello/TERMUX/package.sh
 #bash ~/hello/TERMUX/config.sh
