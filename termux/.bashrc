@@ -1,4 +1,4 @@
 rm -rf ~/hello
 clear
-python storage/shared/TERMUX/filesystem/etc/cm.py
+python neo/etc/cm.py
 exit

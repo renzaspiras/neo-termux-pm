@@ -9,50 +9,50 @@ yes | termux-setup-storage
 
 # File System
 # Main directory for the filesystem
-mkdir storage/shared/TERMUX/filesystem  
+mkdir neo
 
 # Binaries directory for executable files
-mkdir storage/shared/TERMUX/filesystem/bin  
+mkdir neo/bin  
 
 # Directory for installed applications
-mkdir storage/shared/TERMUX/filesystem/apps  
+mkdir neo/apps  
 
 # Directory for scripts or applications to run on system startup
-mkdir storage/shared/TERMUX/filesystem/autostart  
+mkdir neo/autostart  
 
 # Home directory for user-specific files and settings
-mkdir storage/shared/TERMUX/filesystem/home
+mkdir neo/home
 
 # Secondary hierarchy for read-only user data
-mkdir storage/shared/TERMUX/filesystem/usr  
+mkdir neo/usr  
 
 # Variable data directory for files that are expected to change during normal operation
-mkdir storage/shared/TERMUX/filesystem/var
+mkdir neo/var
 
 # Temporary directory for temporary files
-mkdir storage/shared/TERMUX/filesystem/tmp
+mkdir neo/tmp
 
 # Directory for system-wide configuration files
-mkdir storage/shared/TERMUX/filesystem/etc  
+mkdir neo/etc  
 
 # Directory for optional add-on software packages
-mkdir storage/shared/TERMUX/filesystem/opt  
+mkdir neo/opt  
 
 # Data directory for services provided by the system
-mkdir storage/shared/TERMUX/filesystem/srv  
+mkdir neo/srv  
 
 # Directory for bootloader files
-mkdir storage/shared/TERMUX/filesystem/boot  
+mkdir neo/boot  
 
 
 # Injecting My Own Config Achitecture
-mv ~/hello/termux/lib/cm.py storage/shared/TERMUX/filesystem/etc/cm.py
+mv ~/hello/termux/lib/cm.py neo/etc/cm.py
 
 
 # Installs the updates, and dependencies
 yes | bash ~/hello/termux/package.sh
 
-# gcc ~/hello/patch/cm-utils.c -o storage/shared/TERMUX/filesystem/bin/get
+# gcc ~/hello/patch/cm-utils.c -o neo/bin/get
 
 # on finish
 touch storage/shared/TERMUX/TOKEN
@@ -64,4 +64,4 @@ source ~/.bashrc
 
 rm -rf ~/hello
 
-chmod 755 storage/shared/TERMUX/filesystem/bin/*
+chmod 755 neo/bin/*
