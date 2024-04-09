@@ -27,6 +27,10 @@
 
 #include <cstdlib> // Include the header for system()
 
+#include <filesystem>
+namespace fs = std::filesystem;
+#include <vector>
+
 
 // ANSI escape codes for colors
 #define RED     "\033[0;31m"
@@ -70,6 +74,20 @@ void resetCanonicalMode() {
     tcgetattr(STDIN_FILENO, &t);
     t.c_lflag |= ICANON | ECHO;
     tcsetattr(STDIN_FILENO, TCSANOW, &t);
+}
+
+//--> This version only works on termux
+std::string getFirstWord(const std::string& str) {
+    // Find the position of the first space character
+    size_t pos = str.find_first_of(" \t");
+
+    // Extract the substring from the beginning of the string up to the space
+    if (pos != std::string::npos) {
+        return str.substr(0, pos);
+    } else {
+        // If no space is found, return the entire string
+        return str;
+    }
 }
 
 string handleInput(){
@@ -136,27 +154,14 @@ int main(){
 
     else{      
       //output must be here
+      string directory_path = "bin";
+      if(!fs::exists(directory_path) || !fs::is_directory(directory_path)){
+        cout << input + ": Command not found" << endl;
+        continue;
+      }      
+
       printf("\n\n");
     }
-
-    /*
-    pid_t pid = fork();
-    if(pid == 0){
-      execlp(input.c_str(), NULL);
-      cout << "\n";
-      exit(EXIT_FAILURE);
-    }
-    else if(pid > 0){
-      int status;
-      cout << "\n";
-      waitpid(pid, &status, 0);
-      cout << "\n";
-    }
-    else{
-      cerr << "Error Forking Process\n";
-    }
-
-    */
   }
 
   resetCanonicalMode();
