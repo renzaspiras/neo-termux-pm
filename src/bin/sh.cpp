@@ -129,7 +129,7 @@ int main(){
     else if(pid > 0){
       int status;
       cout << "\n";
-      waitpid(pid, &status, 0);
+      //waitpid(pid, &status, 0);
       cout << "\n";
     }
     else{
