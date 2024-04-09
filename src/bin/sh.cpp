@@ -148,7 +148,7 @@ int main(){
       break;
     }
 
-    else if(input == "clear"){
+    else if(input == "clear" || input == "cls"){
       cout << "\033[2J\033[H";
     }
 

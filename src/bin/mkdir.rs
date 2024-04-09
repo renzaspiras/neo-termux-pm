@@ -25,8 +25,6 @@ fn main(){
     // Retrieves the total of arguments except the main command.....
     let argument_total = args.len()  -1;
 
-    
-
     for num in 0..argument_total{
       match fs::create_dir(&args[num + 1]){
         Ok(_) => println!("\n"),

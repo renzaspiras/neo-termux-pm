@@ -3,7 +3,6 @@ import random
 lang = [
   "c",
   "c++",
-  "zig",
   "rust"
 ]
 
