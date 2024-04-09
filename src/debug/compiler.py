@@ -1,6 +1,6 @@
 import os
 
-binary = os.listdir("l/src/bin")
+binary = os.listdir("src/bin")
 
 try:
   for j in binary:
