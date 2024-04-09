@@ -154,6 +154,7 @@ int main(){
 
     else{      
       //output must be here
+      cout << endl;
       string directory_path = "bin";
       if(!fs::exists(directory_path) || !fs::is_directory(directory_path)){
         cout << input + ": Command not found" << endl;
@@ -184,7 +185,7 @@ int main(){
       if(!found){
         cout << input + ": Command not found" << endl;
       }      
-      printf("\n\n");
+      printf("\n");
     }
   }
 
