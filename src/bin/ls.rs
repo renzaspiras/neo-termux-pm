@@ -1,6 +1,6 @@
 use std::env;
 use std::fs;
-use std::path::Path;
+//use std::path::Path;
 
 fn main() {
     // Get the directory path from command line arguments
