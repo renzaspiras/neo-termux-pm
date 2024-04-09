@@ -184,8 +184,7 @@ int main(){
       }
       if(!found){
         cout << input + ": Command not found" << endl;
-      }      
-      printf("\n");
+      }            
     }
   }
 
