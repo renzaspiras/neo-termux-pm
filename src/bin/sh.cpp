@@ -120,6 +120,10 @@ int main(){
       cout << "\033[2J\033[H";
     }
 
+    else{
+      printf("\n");
+    }
+
     /*
     pid_t pid = fork();
     if(pid == 0){
