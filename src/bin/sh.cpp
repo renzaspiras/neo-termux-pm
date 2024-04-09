@@ -178,7 +178,7 @@ int main(){
             full_command = directory_path + "/" + input;
           }
           system(full_command.c_str());
-          cout << "" << endl;
+          //cout << "" << endl;
           break;
         }
       }
