@@ -159,7 +159,31 @@ int main(){
         cout << input + ": Command not found" << endl;
         continue;
       }      
-
+      vector<string> files;
+      for (const auto& entry : fs::directory_iterator(directory_path)) {
+        if (fs::is_regular_file(entry)) {
+          files.push_back(entry.path().filename());
+        }
+      }
+      bool found = false;
+      for (const auto& file : files) {
+        if(file == getFirstWord(input)){
+          found = true;
+          string full_command;
+          if(input.find('/') != string::npos){
+            full_command = input;
+          }
+          else {
+            full_command = directory_path + "/" + input;
+          }
+          system(full_command.c_str());
+          cout << "" << endl;
+          break;
+        }
+      }
+      if(!found){
+        cout << input + ": Command not found" << endl;
+      }      
       printf("\n\n");
     }
   }
