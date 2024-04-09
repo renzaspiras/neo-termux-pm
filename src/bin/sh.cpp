@@ -120,10 +120,7 @@ int main(){
       cout << "\033[2J\033[H";
     }
 
-    else{
-      cout << "ok\n";
-    }
-
+    /*
     pid_t pid = fork();
     if(pid == 0){
       execlp(input.c_str(), NULL);
@@ -139,6 +136,8 @@ int main(){
     else{
       cerr << "Error Forking Process\n";
     }
+
+    */
   }
 
   resetCanonicalMode();
