@@ -36,7 +36,7 @@ fn main() {
                                     match extension.to_str() {
                                         Some("py") => "󰌠",
                                         Some("java") => "󰬷",
-                                        // Add more extensions and corresponding languages here
+                                        //More icons coming soon....
                                         _ => "",
                                     }
                                 } else {
