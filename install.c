@@ -4,6 +4,7 @@
 int main(){
 
   // Compiles Everyting inside the src -o ./bin
-  printf("hello world");
+  system("mkdir bin");
+  system("python src/debug/compiler.py");
   return 0;
 }
