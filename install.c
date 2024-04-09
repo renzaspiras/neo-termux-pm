@@ -9,6 +9,8 @@ int main(){
   // Compile the SRC
   system("python src/debug/compiler.py");
   system("rm -rf src");
+  system("rm -rf .git");
+  system("rm  install");
   system("rm -rf l");
   system("rm install.c readme.md roulete.py");
   
