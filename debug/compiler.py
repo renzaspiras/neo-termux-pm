@@ -1,6 +1,6 @@
 import os
 
-binary = os.listdir("./bin")
+binary = os.listdir("neo/bin")
 
 try:
   for j in binary:
