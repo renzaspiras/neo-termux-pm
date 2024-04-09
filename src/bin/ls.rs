@@ -1,5 +1,6 @@
 use std::env;
 use std::fs;
+use std::path::Path;
 
 fn main() {
     // Get the directory path from command line arguments
@@ -30,7 +31,17 @@ fn main() {
                             let entry_type = if entry_path.is_dir() {
                                 ""
                             } else {
-                                ""
+                                // Extract file extension
+                                if let Some(extension) = entry_path.extension() {
+                                    match extension.to_str() {
+                                        Some("py") => "󰌠",
+                                        Some("java") => "󰬷",
+                                        // Add more extensions and corresponding languages here
+                                        _ => "",
+                                    }
+                                } else {
+                                    ""
+                                }
                             };
                             println!("{} {}", entry_type, name);
                         }
