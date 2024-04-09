@@ -26,6 +26,17 @@
 #include <termio.h>    
 
 
+// ANSI escape codes for colors
+#define RED     "\033[0;31m"
+#define GREEN   "\033[0;32m"
+#define YELLOW  "\033[0;33m"
+#define BLUE    "\033[0;34m"
+#define PURPLE  "\033[0;35m"
+#define CYAN    "\033[0;36m"
+#define WHITE   "\033[0;37m"
+#define RESET   "\033[0m"
+
+
 // The following line allows you to use symbols from the std namespace
 // without explicitly specifying the namespace prefix std::
 // It simplifies code by eliminating the need for repetitive namespace prefixes.
@@ -107,7 +118,8 @@ int main(){
   // Calling the set cannonical mode......
   setNonCanonicalMode();
   while (true){
-    cout << "> ";
+    cout << "\n" << GREEN << "┌──(root@archlinux)" << RESET << std::endl;
+    std::cout << WHITE << "└─" << RESET << "$ ";
     string input;
 
     input = handleInput();
@@ -120,8 +132,9 @@ int main(){
       cout << "\033[2J\033[H";
     }
 
-    else{
-      printf("\n");
+    else{      
+      //output must be here
+      printf("\n\n");
     }
 
     /*
