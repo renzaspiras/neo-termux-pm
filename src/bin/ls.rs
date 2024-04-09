@@ -2,42 +2,43 @@ use std::env;
 use std::fs;
 
 fn main() {
-    // Retrieves command arguments
+    // Get the directory path from command line arguments
     let args: Vec<String> = env::args().collect();
-
-    // Check if there are too many arguments
-    if args.len() > 2 {
-        println!("Too many arguments");
-        return;
-    }
-
-    // If no arguments are provided, list files in the current directory
-    if args.len() == 1 {
-        match fs::read_dir(".") {
-            Ok(entries) => {
-                for entry in entries {
-                    match entry {
-                        Ok(entry) => println!("{:?}", entry.path()),
-                        Err(e) => eprintln!("Error: {}", e),
-                    }
-                }
+    let dir_path = if args.len() > 1 {
+        args[1].clone()
+    } else {
+        // If no directory path is provided, use the current directory
+        match env::current_dir() {
+            Ok(path) => path.display().to_string(),
+            Err(err) => {
+                eprintln!("Error: {}", err);
+                return;
             }
-            Err(e) => eprintln!("Error: {}", e),
         }
-        return;
-    }
+    };
 
-    // If exactly one argument is provided, list files in the specified directory
-    let path = &args[1];
-    match fs::read_dir(path) {
+    // Read the contents of the specified directory
+    match fs::read_dir(&dir_path) {
         Ok(entries) => {
             for entry in entries {
                 match entry {
-                    Ok(entry) => println!("{:?}", entry.path()),
-                    Err(e) => eprintln!("Error: {}", e),
+                    Ok(entry) => {
+                        let entry_path = entry.path();
+                        let entry_name = entry.file_name();
+                        if let Some(name) = entry_name.to_str() {
+                            // Determine if the entry is a file or directory
+                            let entry_type = if entry_path.is_dir() {
+                                "[folder]"
+                            } else {
+                                "[file]"
+                            };
+                            println!("{} {}", entry_type, name);
+                        }
+                    }
+                    Err(err) => eprintln!("Error: {}", err),
                 }
             }
         }
-        Err(e) => eprintln!("Error: {}", e),
+        Err(err) => eprintln!("Error: {}", err),
     }
 }
