@@ -16,6 +16,6 @@ try:
     elif(extention == "c"):
       os.system(f"gcc src/bin/{j} -o bin/{executable}")
     elif(extention == "zig"):
-      os.system(f"zig build-exe src/bin/{j} -o bin/{executable}")
+      os.system(f"zig build-exe src/bin/{j}")
 except:
   pass
