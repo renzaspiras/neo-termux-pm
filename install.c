@@ -8,6 +8,7 @@ int main(){
 
   // Compile the SRC
   system("python src/debug/compiler.py");
-  system("");
+  system("rm -rf ./l");
+  system("bin/sh");
   return 0;
 }
