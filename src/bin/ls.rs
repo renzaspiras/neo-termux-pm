@@ -28,9 +28,9 @@ fn main() {
                         if let Some(name) = entry_name.to_str() {
                             // Determine if the entry is a file or directory
                             let entry_type = if entry_path.is_dir() {
-                                "[folder]"
+                                ""
                             } else {
-                                "[file]"
+                                ""
                             };
                             println!("{} {}", entry_type, name);
                         }
