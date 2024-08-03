@@ -1,12 +1,6 @@
-# Under Revission
+# NeoTermux Package Manager
 
-***
-Please do not git clone yet...
-***
-
-What tooks it too long????
-> Re inventing the archlinux | sounds stupid enough for this project....
-> This is not a replacement, just a hobby project...
+...
 
 ## test build
 ```bash
